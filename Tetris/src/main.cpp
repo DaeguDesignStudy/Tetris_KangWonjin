@@ -2,17 +2,18 @@
 #include "Tetris/TetrisGame.h"
 #include "Tetris/TetrisMap.h"
 #include "Tetris/ConsoleDisplay.h"
+#include "Tetris/KeyboardInput.h"
 
 int main(int argc, char const *argv[])
 {
     TetrisMap *map;
     TetrisGame *game;
-    game->SetMap(map);
-
     ConsoleDisplay *display;
-    display->SetMap(map);
+    KeyboardInput *input;
 
     GameFramework *manager;
-    manager->SetGame(game);
+    manager->Initialize(game, display, input, map);
+    manager->Process();
+
     return 0;
 }

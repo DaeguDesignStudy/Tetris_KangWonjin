@@ -15,9 +15,19 @@ class GameFramework
     InputDevice *m_input;
 
 public:
-    void SetGame(Game *game) {}
-    void SetDisplay(Display *display) {}
-    void SetInput(InputDevice *input) {}
+    void Initialize(Game *game, Display *display, InputDevice *input, Map *map)
+    {
+        m_game = game;
+        m_display = display;
+        m_input = input;
+
+        m_game->SetMap(map);
+        m_display->SetMap(map);
+    }
+
+    void SetGame(Game *game) { m_game = game; }
+    void SetDisplay(Display *display) { m_display = display; }
+    void SetInput(InputDevice *input) { m_input = input; }
 
     void Process()
     {
