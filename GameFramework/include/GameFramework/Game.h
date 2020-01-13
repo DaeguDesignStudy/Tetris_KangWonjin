@@ -2,14 +2,14 @@
 
 #include "GameState.h"
 #include "Command.h"
-#include "IMap.h"
+#include "Map.h"
 
-class IGame
+class Game
 {
-    IMap *m_map;
+    Map *m_map;
 
 public:
-    void SetMap(IMap *map)
+    void SetMap(Map *map)
     {
         m_map = map;
     }

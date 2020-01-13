@@ -5,10 +5,9 @@
 
 #include <windows.h>
 
-#include "IInput.h"
-#include "Command.h"
+#include <GameFramework/InputDevice.h>
 
-class KeyboardInput : public IInput
+class KeyboardInput : public InputDevice
 {
 
     void runningloop() override

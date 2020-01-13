@@ -1,7 +1,8 @@
 #pragma once
 
+#include <GameFramework/Command.h>
+
 #include "Block.h"
-#include "Command.h"
 
 class Tetromino
 {

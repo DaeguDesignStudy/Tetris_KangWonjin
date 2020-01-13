@@ -1,8 +1,8 @@
 #pragma once
 
-#include "IGame.h"
+#include <GameFramework/Game.h>
 
-class TetrisGame : public IGame
+class TetrisGame : public Game
 {
     GameState DoCommand(Command command) override
     {

@@ -5,7 +5,7 @@
 
 #include "Command.h"
 
-class IInput
+class InputDevice
 {
     std::thread m_inputThread;
 
@@ -24,7 +24,7 @@ public:
     void StartListenInput()
     {
         m_running.store(true);
-        m_inputThread = std::thread(&IInput::runningloop, this);
+        m_inputThread = std::thread(&InputDevice::runningloop, this);
     }
 
     void Stop()

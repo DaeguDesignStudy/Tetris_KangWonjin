@@ -1,7 +1,7 @@
-#include "GameStateManager.h"
-#include "TetrisGame.h"
-#include "TetrisMap.h"
-#include "ConsoleDisplay.h"
+#include <GameFramework/GameFramework.h>
+#include "Tetris/TetrisGame.h"
+#include "Tetris/TetrisMap.h"
+#include "Tetris/ConsoleDisplay.h"
 
 int main(int argc, char const *argv[])
 {
@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
     ConsoleDisplay *display;
     display->SetMap(map);
 
-    GameStateManager *manager;
+    GameFramework *manager;
     manager->SetGame(game);
     return 0;
 }
