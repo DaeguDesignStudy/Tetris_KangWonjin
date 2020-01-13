@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #include "Game.h"
 #include "InputDevice.h"
 #include "Display.h"
@@ -31,6 +33,8 @@ public:
 
     void Process()
     {
+        std::cout << __FUNCTION__ << std::endl;
+        m_input->StartListenInput();
         while (true)
         {
             Command command = m_input->GetInput();

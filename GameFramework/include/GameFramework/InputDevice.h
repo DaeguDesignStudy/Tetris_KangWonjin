@@ -16,6 +16,9 @@ protected:
 public:
     Command GetInput()
     {
+        if (m_inputQueue.empty())
+            return Command::EMPTY;
+
         auto command = m_inputQueue.front();
         m_inputQueue.pop();
         return command;

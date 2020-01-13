@@ -12,5 +12,6 @@ enum class Command
     START,   // p (play)
     RESUME,  // r
     RESTART, // s
-    EXIT     // q
+    EXIT,    // q
+    EMPTY,
 };
