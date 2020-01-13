@@ -12,6 +12,7 @@ class TetrisGame : public IGame
         case Command::LEFT:
             break;
         default:
+            break;
         }
 
         return GameState::GAME_OVER;
