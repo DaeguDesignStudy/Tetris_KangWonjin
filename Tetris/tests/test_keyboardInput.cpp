@@ -2,7 +2,7 @@
 
 #include <thread>
 
-#include "KeyboardInput.h"
+#include "Tetris/KeyboardInput.h"
 
 TEST(KEYBOARD_INPUT, getInput)
 {
