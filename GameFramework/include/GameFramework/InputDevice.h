@@ -5,6 +5,12 @@
 
 #include "Command.h"
 
+/**
+ * Input Device를 추상화한 인터페이스입니다.
+ * 입력 디바이스에서 받은 입력을 queue에 순차적으로 넣습니다.
+ * 입력 받은 데이터는 외부 클래스에서 GetInput 메소드를 통해 접근할 수 있습니다.
+ * Input Device를 상속한 구현체는 각 InputeDevice에 대한 내용을 running_loop()에 구현해야 합니다.
+ * */
 class InputDevice
 {
     std::thread m_inputThread;

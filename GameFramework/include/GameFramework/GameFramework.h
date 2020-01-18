@@ -8,7 +8,11 @@
 #include "GameState.h"
 #include "Command.h"
 
-// 에뮬레이터
+/**
+ * 게임상태를 관리하는 클래스입니다.
+ * Game의 종류, Display Device, Inpute Device를 설정해야 하며, 
+ * 설정한 객체를 유기적으로 연결하여 여러 입력에 따라 출력이 나타나게끔 제어하는 역할을 합니다. 
+ * */
 class GameFramework
 {
     GameState m_state;
@@ -37,11 +41,12 @@ public:
         m_input->StartListenInput();
         while (true)
         {
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
             Command command = m_input->GetInput();
             // 1. state 와 input에 따라 게임의 상태를 결정
             GameState state = m_game->DoCommand(command);
 
-            // 필요한 command만 catch하고 나머지는 game으로 넘겨준다.
+            // 2. 필요한 command만 catch하고 나머지는 game으로 넘겨준다.
             if (command == Command::EXIT)
                 break;
 
@@ -50,14 +55,15 @@ public:
             case Command::PAUSE:
                 /* code */
                 break;
-
+            // 기타 등의 Command의 처리를 합니다.
             default:
+                // GameRunning State일 경우에는 Game 로직을 수행하기위해 m_game으로 command를 넘겨줍니다.
                 m_game->DoCommand(command);
                 break;
             }
 
-            // 2. 게임의 상태를 고려하여 Display로 출력
-            m_display->Draw(command);
+            // 3. 게임의 상태를 고려하여 Display로 출력
+            m_display->Draw(m_state);
         }
     }
 };

@@ -5,7 +5,7 @@
 class ConsoleDisplay : public Display
 {
 public:
-    void Draw(Command command) override
+    void Draw(GameState state) override
     {
     }
 };
