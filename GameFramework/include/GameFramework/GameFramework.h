@@ -44,7 +44,7 @@ public:
             std::this_thread::sleep_for(std::chrono::milliseconds(500));
             Command command = m_input->GetInput();
             // 1. state 와 input에 따라 게임의 상태를 결정
-            GameState state = m_game->DoCommand(command);
+            // GameState state = m_game->DoCommand(command);
 
             // 2. 필요한 command만 catch하고 나머지는 game으로 넘겨준다.
             if (command == Command::EXIT)
