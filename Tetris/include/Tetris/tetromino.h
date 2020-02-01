@@ -11,9 +11,10 @@
  * */
 class Tetromino
 {
+protected:
     int x;
     int y;
-    Block *block;
+    std::vector<Block> blocks;
 
 public:
     void DoCommand(Command command)
@@ -29,7 +30,14 @@ public:
         }
     }
 
+    /**
+     * 모든 테트로미노는 회전을 회전축에 따라 구현해야 합니다.
+     * */
     virtual void Rotate() = 0;
+
     void Move(int dir_x, int dir_y);
+    /**
+     * 블럭을 이동가능한 가장 최하단으로 움직입니다.
+     * */
     void MoveFloor();
 };

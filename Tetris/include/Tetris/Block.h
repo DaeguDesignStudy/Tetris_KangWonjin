@@ -13,5 +13,6 @@ enum class BlockType
 
 struct Block
 {
+    int x,y;
     BlockType type;
 };

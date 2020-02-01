@@ -10,7 +10,40 @@
 class ConsoleDisplay : public Display
 {
 public:
+    /**
+     *  게임 상태에 따라 
+     * */
     void Draw(GameState state) override
+    {
+        if(state == GameState::GAME_RUNNING)
+            DrawGame();
+        else if(state == GameState::GAME_OVER)
+            DrawGameStatusOver();
+        else if (state == GameState::GAME_PAUSED)
+            DrawGameStatusPaused();
+        else if (state == GameState::GAME_CLEAR)
+            DrawGameStatusClear();
+        else
+            ;
+    }
+
+private:
+    void DrawGameStatusOver()
+    {
+    }
+
+    void DrawGameStatusPaused()
+    {
+    }
+
+    void DrawGameStatusClear()
+    {
+    }
+
+    /**
+     *  Map 정보를 이용하여 진행되고 있는 게임을 그립니다.
+     * */
+    void DrawGame()
     {
     }
 };

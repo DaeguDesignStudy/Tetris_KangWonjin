@@ -6,10 +6,9 @@
  * */
 class TetrominoL : public Tetromino
 {
-    int x;
-    int y;
-    Block *block;
-
 public:
+    /**
+     *  설정된 회전축을 중심으로 블럭을 회전합니다.
+     * */
     void Rotate() override;
 };

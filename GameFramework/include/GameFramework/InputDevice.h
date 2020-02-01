@@ -11,6 +11,8 @@
  * 입력 받은 데이터는 외부 클래스에서 GetInput 메소드를 통해 접근할 수 있습니다.
  * Input Device를 상속한 구현체는 각 InputeDevice에 대한 내용을 running_loop()에 구현해야 합니다.
  * */
+
+//! 동기장치 및 비동기장치를 같이 추상화하는 형태로 변경해야함
 class InputDevice
 {
     std::thread m_inputThread;
